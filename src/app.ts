@@ -1,9 +1,17 @@
-// src/presentation/example.ts
+import { ExpressServer } from '@presentation';
+import { container } from '@shared';
 
-import { BasicConfig, container, TOKENS } from '@config';
-import { Logger } from '@shared';
+(async () => {
+  await main();
+})();
 
-const logger = container.resolve<Logger>(TOKENS.Logger);
-const config = container.resolve<BasicConfig>(TOKENS.Config);
-
-logger.info(`Starting service on port ${config.port}`);
+async function main() {
+  const server = ExpressServer.createExpressServer(container);
+  try {
+    await server.start();
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('[fatal] Unable to start HTTP server', error);
+    process.exit(1);
+  }
+}
