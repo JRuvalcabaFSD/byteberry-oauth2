@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@application": ["./src/application/index.ts"],
+      "@application/*": ["./src/application/*"],
+      "@config": ["./src/config/index.ts"],
+      "@config/*": ["./src/config/*"],
+      "@domain": ["./src/domain/index.ts"],
+      "@domain/*": ["./src/domain/*"],
+      "@infrastructure": ["./src/infrastructure/index.ts"],
+      "@infrastructure/*": ["./src/infrastructure/*"],
+      "@interfaces": ["./src/interfaces/index.ts"],
+      "@interfaces/*": ["./src/interfaces/*"],
+      "@presentation": ["./src/presentation/index.ts"],
+      "@presentation/*": ["./src/presentation/*"],
+      "@shared": ["./src/shared/index.ts"],
+      "@shared/*": ["./src/shared/*"]
+    },
+    "resolveJsonModule": true,
+    "typeRoots": ["./node_modules/@types"]
+  },
+  "include": ["src/**/*.ts", "test/**/*.ts", "**/*.test.ts"],
+  "exclude": ["node_modules", "dist"]
+}
