@@ -1,11 +1,17 @@
+import { get } from 'env-var';
+
+export type NodeEnv = 'development' | 'test' | 'production';
+
 export interface IConfig {
-  nodeEnv: string;
+  nodeEnv: NodeEnv;
   port: number;
   serviceName: string;
+  logLevel: 'error' | 'warn' | 'info' | 'http' | 'verbose' | 'debug' | 'silly';
 }
 
 export class BasicConfig implements IConfig {
-  nodeEnv = process.env.NODE_ENV ?? 'development';
-  port = Number(process.env.PORT) || 4000;
-  serviceName = process.env.SERVICE_NAME || 'oauth2';
+  nodeEnv = get('NODE_ENV').default('development').asEnum<NodeEnv>(['development', 'test', 'production']);
+  logLevel = get('LOG_LEVEL').default('info').asEnum(['error', 'warn', 'info', 'http', 'verbose', 'debug', 'silly']);
+  port = get('PORT').default('4000').asPortNumber();
+  serviceName = get('SERVICE_NAME').default('oauth2').asString();
 }
