@@ -1,0 +1,53 @@
+{
+  "name": "oauth2",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "git@github.com:JRuvalcabaFSD/ByteBerry-oauth2.git",
+  "author": "Jesús Ruvalcaba <jesus@jrmdev.org>",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:ts": "tsc -p tsconfig.build.json",
+    "build:alias": "tsc-alias -p tsconfig.build.json",
+    "build": "yarn clean && yarn build:ts && yarn build:alias",
+    "start": "node dist/app.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "test": "jest",
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint:check": "eslint . --max-warnings=0",
+    "validate": "yarn typecheck && yarn lint:check && yarn test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@types/express": "^5.0.3",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.3.0",
+    "@types/supertest": "^6.0.3",
+    "eslint": "^9.33.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-n": "^17.21.3",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.3.0",
+    "jest": "^30.1.1",
+    "jiti": "^2.5.1",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
+    "supertest": "^7.1.4",
+    "ts-jest": "^29.4.1",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.40.0",
+    "tsc-alias": "^1.8.10"
+  },
+  "dependencies": {
+    "dotenv": "16.4.5",
+    "env-var": "^7.5.0",
+    "express": "^5.1.0",
+    "morgan": "^1.10.1",
+    "winston": "^3.17.0"
+  }
+}
