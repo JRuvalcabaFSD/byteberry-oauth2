@@ -1,7 +1,7 @@
 # ByteBerry OAuth2 Service
 
 [![CI/CD](https://img.shields.io/github/actions/workflow/status/JRuvalcabaFSD/ByteBerry-oauth2/ci.yml?branch=develop&label=CI/CD&logo=github)](https://github.com/JRuvalcabaFSD/ByteBerry-oauth2/actions)
-[![Docker Automated build](https://img.shields.io/docker/automated/jruvalcabafsd/byteberry-oauth2?logo=docker)](https://hub.docker.com/r/jruvalcabafsd/byteberry-oauth2)
+[![Docker Hub](https://img.shields.io/docker/v/jruvalcabafsd/byteberry-oauth2?label=Docker%20Hub&logo=docker&logoColor=white&color=2496ED)](https://hub.docker.com/r/jruvalcabafsd/byteberry-oauth2)
 [![GitHub Tag](https://img.shields.io/github/v/tag/JRuvalcabaFSD/ByteBerry-oauth2?label=Versi%C3%B3n)](https://github.com/JRuvalcabaFSD/ByteBerry-oauth2/tags)
 [![License](https://img.shields.io/github/license/JRuvalcabaFSD/ByteBerry-oauth2?label=License)](./LICENSE)
 [![Release](https://img.shields.io/github/v/release/ByteBerry/ByteBerry-oauth2?logo=semantic-release)](https://github.com/JRuvalcabaFSD/ByteBerry-oauth2/releases)
