@@ -29,7 +29,7 @@ describe('Suit para probar el contenedor de inyección de dependencias', () => {
     expect(instance1.getName()).toBe('Instance 1');
     expect(instance2.getName()).toBe('Instance 2');
   });
-  it('debería retorna la misma instancia cuando se registra como singleton', () => {
+  it('The same instance should return when registered as Singleton', () => {
     class TestService {
       private name: string = '';
       constructor() {}
@@ -51,7 +51,7 @@ describe('Suit para probar el contenedor de inyección de dependencias', () => {
     expect(instance2.getName()).toBe('TestService');
     expect(instance1).toBe(instance2);
   });
-  it('debería retorna la instancia pre registrada cuando se registra instance', () => {
+  it('The pre -registered instance should return when instance is recorded', () => {
     class TestService {
       private name: string = 'TestService';
       constructor() {}
@@ -70,12 +70,12 @@ describe('Suit para probar el contenedor de inyección de dependencias', () => {
     expect(instance1.getName()).toBe('TestService');
     expect(instance1).toBe(instance2);
   });
-  it('debería lanzar error cuando el token no esta registrado', () => {
+  it('I should launch error when the token is not registered', () => {
     const TestToken = Symbol('TestService');
 
     expect(() => container.resolve(TestToken)).toThrow(`DI: token not registered → ${TestToken.description}`);
   });
-  it('debería limpiar todos los registros cuando se invoca clear', () => {
+  it('I should clean all records when Clear is invoked', () => {
     class TestService {
       constructor(private name: string) {}
 

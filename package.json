@@ -9,13 +9,14 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only src/app.ts",
     "build": "rimraf ./dist && tsc --project tsconfig.build.json",
     "lint": "eslint . --fix",
-    "test": "jest"
+    "test": "jest --silent"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
     "@types/express": "^5.0.3",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.3.0",
+    "@types/supertest": "^6.0.3",
     "eslint": "^9.33.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-import-resolver-typescript": "^4.4.4",
