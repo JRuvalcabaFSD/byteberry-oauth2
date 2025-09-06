@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { loadEnv } from '@config';
 import fs from 'fs';
 import os from 'os';

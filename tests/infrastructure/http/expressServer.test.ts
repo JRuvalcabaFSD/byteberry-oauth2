@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { BasicConfig } from '@config';
 import { AppRouter, ExpressServer } from '@presentation';
 import { Container, Logger, TOKENS } from '@shared';

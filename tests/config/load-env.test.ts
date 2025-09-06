@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 // File: tests/config/load-env.spec.ts
 import * as fs from 'node:fs';
 import * as os from 'node:os';

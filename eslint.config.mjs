@@ -1,16 +1,23 @@
-// eslint.config.mts
-import tseslint from '@typescript-eslint/eslint-plugin';
-import tsparser from '@typescript-eslint/parser';
+// eslint.config.mjs
+import tseslint from 'typescript-eslint';
 import prettierPlugin from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
 
 export default [
+  // Global ignores - these files/patterns will be ignored across all configurations
   {
-    files: ['**/*.ts'],
+    ignores: ['coverage/**', 'dist/**', 'node_modules/**', '*.config.js', '*.config.mjs', 'jest.config.js', 'jest.config.ts', 'jest.setup.ts']
+  },
+  {
+    files: ['**/*.ts', '**/*.js'],
 
     languageOptions: {
-      parser: tsparser,
+      parser: tseslint.parser,
       sourceType: 'module',
+      parserOptions: {
+        project: './tsconfig.json',
+        tsconfigRootDir: process.cwd(),
+      },
     },
 
     settings: {
@@ -22,7 +29,7 @@ export default [
     },
 
     plugins: {
-      '@typescript-eslint': tseslint,
+      '@typescript-eslint': tseslint.plugin,
       prettier: prettierPlugin,
     },
 
@@ -58,6 +65,13 @@ export default [
       semi: ['error', 'always'],
       quotes: ['error', 'single'],
 
+      // Reglas adicionales para mejorar la calidad del código
+      '@typescript-eslint/explicit-function-return-type': 'off',
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+      '@typescript-eslint/no-explicit-any': 'warn',
+      'prefer-const': 'error', // This is a core ESLint rule, not TypeScript ESLint
+      '@typescript-eslint/no-var-requires': 'error',
+
       // Prettier integrado con opciones explícitas:
       'prettier/prettier': [
         'error',
@@ -71,6 +85,19 @@ export default [
           arrowParens: 'always',
         },
       ],
+    },
+  },
+
+  // Configuración específica para archivos de test
+  {
+    files: ['**/*.test.ts', '**/*.spec.ts', '**/__tests__/**/*.ts'],
+    rules: {
+      // Permitir any en tests para simplificar mocks
+      '@typescript-eslint/no-explicit-any': 'off',
+      // Permitir console en tests
+      'no-console': 'off',
+      // Permitir variables no usadas en tests (para setup/teardown)
+      '@typescript-eslint/no-unused-vars': 'off',
     },
   },
 ];

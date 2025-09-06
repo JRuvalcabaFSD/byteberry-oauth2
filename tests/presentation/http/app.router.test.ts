@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { AppRouter, HealthRoutes } from '@presentation';
 import { Container } from '@shared';
 import express from 'express';

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable no-console */
 import request from 'supertest';
 import { ExpressServer } from '@presentation';
 import { container } from '@shared';
