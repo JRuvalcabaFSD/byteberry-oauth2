@@ -6,9 +6,18 @@
   "author": "Jesús Ruvalcaba <jesus@jrmdev.org>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only src/app.ts",
-    "build": "rimraf ./dist && tsc --project tsconfig.build.json",
-    "lint": "eslint . --fix",
+    "build:alias": "tsc-alias -p tsconfig.build.json",
+    "build:ts": "tsc -p tsconfig.build.json",
+    "build": "yarn clean && yarn build:ts && yarn build:alias",
+    "clean": "rimraf ./dist",
+    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules src/app.ts",
+    "lint:check": "eslint . --ext .ts,.js",
+    "lint": "eslint . --fix --ext .ts,.js",
+    "start:prod": "NODE_ENV=production node dist/app.js",
+    "start": "NODE_ENV=production node -r tsconfig-paths/register dist/app.js",
+    "test:coverage": "jest --coverage --silent",
+    "test:e2e": "jest --testPathPattern=e2e --silent",
+    "test:watch": "jest --watch --silent",
     "test": "jest --silent"
   },
   "devDependencies": {
@@ -33,7 +42,8 @@
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.40.0"
+    "typescript-eslint": "^8.40.0",
+    "tsc-alias": "^1.8.10"
   },
   "dependencies": {
     "dotenv": "16.4.5",

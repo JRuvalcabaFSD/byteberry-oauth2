@@ -1,0 +1,25 @@
+# Node / Tooling
+node_modules
+npm-debug.log*
+yarn-error.log*
+.pnpm-store
+
+# TS / Build
+dist
+coverage
+.cache
+
+# VCS / IDE
+.git
+.gitignore
+.vscode
+.idea
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Misc
+Dockerfile*
+docker-compose*.yml
