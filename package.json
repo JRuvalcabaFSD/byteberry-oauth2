@@ -1,24 +1,21 @@
 {
   "name": "oauth2",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "repository": "git@github.com:JRuvalcabaFSD/ByteBerry-oauth2.git",
   "author": "Jesús Ruvalcaba <jesus@jrmdev.org>",
   "license": "MIT",
   "scripts": {
-    "build:alias": "tsc-alias -p tsconfig.build.json",
+    "clean": "rimraf dist",
     "build:ts": "tsc -p tsconfig.build.json",
+    "build:alias": "tsc-alias -p tsconfig.build.json",
     "build": "yarn clean && yarn build:ts && yarn build:alias",
-    "clean": "rimraf ./dist",
-    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules src/app.ts",
-    "lint:check": "eslint . --ext .ts,.js",
-    "lint": "eslint . --fix --ext .ts,.js",
-    "start:prod": "NODE_ENV=production node dist/app.js",
-    "start": "NODE_ENV=production node -r tsconfig-paths/register dist/app.js",
-    "test:coverage": "jest --coverage --silent",
-    "test:e2e": "jest --testPathPattern=e2e --silent",
-    "test:watch": "jest --watch --silent",
-    "test": "jest --silent"
+    "start": "node dist/app.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "test": "jest",
+    "lint": "eslint .",
+    "format": "prettier -w .",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
