@@ -1,11 +1,12 @@
 # ByteBerry OAuth2 Service
 
 [![CI/CD](https://img.shields.io/github/actions/workflow/status/JRuvalcabaFSD/ByteBerry-oauth2/ci.yml?branch=develop&label=CI/CD&logo=github)](https://github.com/JRuvalcabaFSD/ByteBerry-oauth2/actions)
-[![Docker Hub](https://img.shields.io/docker/v/jruvalcabafsd/byteberry-oauth2?label=Docker%20Hub&logo=docker&logoColor=white&color=2496ED)](https://hub.docker.com/r/jruvalcabafsd/byteberry-oauth2)
-[![GitHub Tag](https://img.shields.io/github/v/tag/JRuvalcabaFSD/ByteBerry-oauth2?label=Versi%C3%B3n)](https://github.com/JRuvalcabaFSD/ByteBerry-oauth2/tags)
+[![Docker](https://img.shields.io/docker/v/jruvalcabafsd/byteberry-oauth2?sort=semver&label=Docker&logo=docker&logoColor=white&color=2496ED)](https://hub.docker.com/r/jruvalcabafsd/byteberry-oauth2)
+[![GitHub Tag](https://img.shields.io/github/v/tag/JRuvalcabaFSD/ByteBerry-oauth2?label=Latest%20Tag)](https://github.com/JRuvalcabaFSD/ByteBerry-oauth2/tags)
+[![GitHub Release](https://img.shields.io/github/v/release/JRuvalcabaFSD/ByteBerry-oauth2?logo=semantic-release&label=Latest%20Release&link=https%3A%2F%2Fgithub.com%2FJRuvalcabaFSD%2FByteBerry-oauth2%2Freleases)](https://github.com/JRuvalcabaFSD/ByteBerry-oauth2/releases)
+[![GitHub Issues](https://img.shields.io/github/issues/JRuvalcabaFSD/ByteBerry-oauth2)](https://github.com/JRuvalcabaFSD/ByteBerry-oauth2/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/JRuvalcabaFSD/ByteBerry-oauth2)](https://github.com/JRuvalcabaFSD/ByteBerry-oauth2/stargazers)
 [![License](https://img.shields.io/github/license/JRuvalcabaFSD/ByteBerry-oauth2?label=License)](./LICENSE)
-[![Release](https://img.shields.io/github/v/release/ByteBerry/ByteBerry-oauth2?logo=semantic-release)](https://github.com/JRuvalcabaFSD/ByteBerry-oauth2/releases)
-
 
 ## 📌 Description
 The **ByteBerry OAuth2 Service** is the authentication and identity provider microservice of the ByteBerry Expense Management System.  
